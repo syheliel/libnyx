@@ -117,7 +117,7 @@ impl fmt::Display for NyxConfig {
 
 impl NyxProcess {
 
-    fn start_process(sharedir: &str, workdir: &str, fuzzer_config: Config,  worker_id: u32) -> Result<QemuProcess, String> {
+    pub fn start_process(sharedir: &str, workdir: &str, fuzzer_config: Config,  worker_id: u32) -> Result<QemuProcess, String> {
 
         let mut config = fuzzer_config.fuzz;
         let runner_cfg = fuzzer_config.runner;
@@ -143,7 +143,7 @@ impl NyxProcess {
         }
     }
 
-    fn process_start(sharedir: &str, workdir: &str, worker_id: u32, cpu_id: u32, create_snapshot: bool, input_buffer_size: Option<u32>, input_buffer_write_protection: bool) -> Result<NyxProcess, String> {
+    pub fn process_start(sharedir: &str, workdir: &str, worker_id: u32, cpu_id: u32, create_snapshot: bool, input_buffer_size: Option<u32>, input_buffer_write_protection: bool) -> Result<NyxProcess, String> {
         let mut cfg: Config = match Config::new_from_sharedir(&sharedir){
             Ok(x) => x,
             Err(msg) => {
