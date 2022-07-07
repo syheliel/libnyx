@@ -42,7 +42,7 @@ impl fmt::Display for NyxReturnValue {
 }
 
 pub struct NyxProcess {
-    process: QemuProcess,
+    pub process: QemuProcess,
 }
 
 #[derive(Clone, Debug)]
