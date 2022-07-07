@@ -2,7 +2,7 @@ use libc::c_char;
 use std::ffi::CStr;
 use std::ffi::c_void;
 
-use fuzz_runner::nyx::aux_buffer::{NYX_CRASH, NYX_HPRINTF, NYX_ABORT};
+pub use fuzz_runner::nyx::aux_buffer::{NYX_CRASH, NYX_HPRINTF, NYX_ABORT};
 use super::*;
 
 #[no_mangle]
